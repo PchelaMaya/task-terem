@@ -22,22 +22,31 @@
 </head>
 <body>
     <section class="blocks">
-        <div class="block-1">
+        <div id="block-title" class="block-1">
             <h1 type="title" class="tittle text-center">Тестовое задание</h1>
         </div>
         <div class="blocks-little align-content-center justify-content-between mt-1">
-            <div class="block-2"></div>
-            <div class="block-3"></div>
+            <div class="blocks-magic">
+                <div id="block-magic-left" class="block-2"></div>
+                <div id="block-magic-right"class="block-3"></div>
+            </div>
             <div class="block-4"></div>
         </div>
         <div class="blocks-medium column-gap-1 mt-1">
             <div class="block-5">
-                <button type="button" class="btn btn-warning w-100">Кнопка 1</button>
+                <button type="button" id="btn-hidden" class="btn btn-warning w-100 h-100">Кнопка 1</button>
             </div>
             <div class="block-6">
-                <button type="button" class="btn btn-success w-100">Кнопка 2</button>
+                <button type="button" id="btn-magic" class="btn btn-success w-100 h-100">Кнопка 2</button>
             </div>
         </div>
     </section>
+    <div id="overlay">
+        <div class="popup">
+            <h2>Привет, мир</h2>
+            <button class="close" title="Закрыть" onclick="document.getElementById('overlay').style.display='none';"></button>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 </html>
