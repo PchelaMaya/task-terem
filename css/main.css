@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --blueviolet: blueviolet;
+}
+
 .blocks-little {
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -10,16 +14,16 @@
     display: contents;
 }
 .blocks-medium {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr 2fr;
 }
 .blocks-little,
 .blocks-medium {
     display: grid;
-    column-gap: 1px;
 }
 .blocks-little .blocks-magic div:nth-child(2){
     border: 1px dashed #000;
 }
+
 .block-1,
 .block-2,
 .block-3,
@@ -29,11 +33,9 @@
     height: 40px;
     border: 1px solid #000;
 }
-.block-1 {
-    width: 100%;
-}
+
 .block-2 {
-    background-color: blueviolet;
+    background-color: var(--blueviolet);
 }
 .block-3 {
     background-color: aquamarine;
@@ -44,7 +46,9 @@
 .block-5,
 .block-6 {
     border-radius: 7px;
-}
+} 
+
+/* Модальный блок */
 
 #overlay {
     position: fixed;
@@ -59,7 +63,7 @@
     animation: fade .6s;
     overflow: auto;
 }
-/* модальный блок */
+
 .popup {
     position: absolute;
     top: 10%;
@@ -81,9 +85,9 @@
     animation: fade .6s;
 }
 .popup h2 {
-    color: blueviolet;
+    color: var(--blueviolet);
 }
-/* кнопка закрытия */
+/* Кнопка закрытия */
 .close {
     position: absolute;
 
@@ -98,14 +102,16 @@
     outline: none;
 }
 .close:before {
-    color: blueviolet;
+    color: var(--blueviolet);
     content: "X";
     text-decoration: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
-/* анимация при появлении блоков с содержанием */
+
+/* Анимация */
+
 @-moz-keyframes fade {
     from { opacity: 0; }
     to { opacity: 1 }
@@ -118,6 +124,7 @@
     from { opacity: 0; }
     to { opacity: 1 }
 }
+
 /* Mobile */
 
 @media (max-width: 400px) {
